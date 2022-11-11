@@ -13,22 +13,24 @@ then
   while IFS= read -r line
   do
 
-    if [ "$line" == "1234" ] && [ $line1 == true ]
+    if [ "$line" == "#!/bin/bash" ] && [ $line1 == true ]
     then
-      echo "test"
+      echo "good"
       line1=false
       continue
     fi
 
-    if [ "$line" = "moi" ]
+    if [ "$line" = "if test -f $input2" ] && [ $line2 = true ]
     then
-      echo "test again"
+      echo "Very good"
+      line2=false
       continue
     fi
 
-    if [ "$line" = "asdf" ]
+    if [ "$line" = "asdf" ] && [ $line3 = true ]
     then
-      echo "try again"
+      echo "Congrats"
+      line3=false
       break
     fi
 
