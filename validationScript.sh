@@ -27,11 +27,12 @@ then
       continue
     fi
 
-    if [ "$line" = "asdf" ] && [ $line3 = true ]
+    if [ "$line" = "else" ] && [ $line3 = true ]
     then
       echo "Congrats"
       line3=false
-      break
+      echo $input1 | awk -F '.' '{print $1}' | xargs -I '{}' cp $input1 '{}'.sh
+      exit
     fi
 
   done < $input1 
