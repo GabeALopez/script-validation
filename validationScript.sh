@@ -3,7 +3,6 @@
 echo "Input file name"
 IFS= read -r input1
 input2="./$input1"
-echo "$input2"
 
 if test -f "$input2"
 then
@@ -12,10 +11,15 @@ then
   do
     
     case $line in
-      *)
-        echo "somthing" 
+      "#!/bin/bash")
+        echo "$line" 
+          
+        esac
+
       ;;
+
     esac
+    echo "$line"
 
   done < "$input2"
 
