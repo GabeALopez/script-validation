@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if test -f ./testScript.sh
+if test -f "./testScript.sh"
 then
   echo "works"
 else
