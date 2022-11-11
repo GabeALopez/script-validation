@@ -3,25 +3,38 @@
 echo "Input file name"
 IFS= read -r input1
 input2="./$input1"
+line1=true
+line2=true
+line3=true
 
 if test -f "$input2"
 then
 
   while IFS= read -r line
   do
-    
-    case $line in
-      "#!/bin/bash")
-        echo "$line" 
-          
-        esac
 
-      ;;
+    if [ "$line" == "1234" ] && [ $line1 == true ]
+    then
+      echo "test"
+      line1=false
+      continue
+    fi
 
-    esac
-    echo "$line"
+    if [ "$line" = "moi" ]
+    then
+      echo "test again"
+      continue
+    fi
 
-  done < "$input2"
+    if [ "$line" = "asdf" ]
+    then
+      echo "try again"
+      break
+    fi
+
+  done < $input1 
+
+
 
 else
   echo "The file does not exist."
