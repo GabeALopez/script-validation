@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#checks target script for certain lines
 echo "Input file name"
 IFS= read -r input1
 input2="./$input1"
@@ -15,6 +16,7 @@ then
     
 
 
+#checks if the bin/bash was included in the target script
     if [ "$line" == "#!/bin/bash" ] && [ $line1 == true ]
     then
       echo "good"
@@ -23,6 +25,7 @@ then
       continue
     fi
 
+#checks if the if statement in the target script exists
     if [ "$line" = "if test -f \"$input2\"" ] && [ $line2 = true ]
     then
       echo "Very good"
